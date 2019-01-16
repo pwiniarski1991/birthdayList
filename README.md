@@ -7,7 +7,9 @@ to use the APOD API - https://api.nasa.gov/api.html#apod for this project.
 2. Create and style a web-form that allows user to:
 
 a) create
+
 b) update
+
 d) delete 
 
 a person's brithday. 
