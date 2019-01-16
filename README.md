@@ -1,6 +1,6 @@
 # Front-End Developer Task -  Astronomy Photo Of the Day based birthday calendar
 
-**A simple, Javascript based task checking your frontend development skills. Do not use any framework (VueJS, React etc.), do note use Bootstrap. No jQuery please. Layout should be responsive, working both on desktop/ipad/phones. **
+**A simple, Javascript based task checking your frontend development skills. Do not use any framework (VueJS, React etc.), do note use Bootstrap. No jQuery please. Layout should be responsive, working both on desktop/ipad/phones.**
 
 
 1. Sign-up for free *NASA API* key https://api.nasa.gov/index.html#apply-for-an-api-key
@@ -28,4 +28,4 @@ The full month calendar view should allow to navigate months back/forward.
 5. Below the calendar display a list of birthdays in the current year (date, photo, name, email). The list should allow to edit and remove entries.
 
 
-## HAVE FUN!
+## Have fun!
