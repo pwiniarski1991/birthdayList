@@ -8,7 +8,7 @@
 * Do not use any framework (VueJS, React etc.)
 * Do note use Bootstrap
 * No jQuery please
-* Layout should be responsive, working both on desktop/ipad/phones.**
+* Layout should be responsive, working both on desktop/ipad/phones.
 
 
 
@@ -40,5 +40,7 @@ The full month calendar view should allow to navigate months back/forward.
 
 4. Below the calendar display a list of birthdays in the current year (date, photo, name, email). The list should allow to edit and remove entries.
 
+
+Once completed, submit to your github account and provide us with link.
 
 ## Have fun!
