@@ -41,6 +41,6 @@ The full month calendar view should allow to navigate months back/forward.
 4. Below the calendar display a list of birthdays in the current year (date, photo, name, email). The list should allow to edit and remove entries.
 
 
-Once completed, submit to your github account and provide us with link.
+**Once completed, submit to your github account and provide us with link.**
 
 ## Have fun!
