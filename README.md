@@ -1,6 +1,7 @@
 # Front-End Developer Task -  Astronomy Photo Of the Day based birthday calendar
 
-**A simple, Javascript based task checking your frontend development skills. 
+**A simple, Javascript based task checking your frontend development skills.** 
+
 
 
 ### Requirements/perequisites:
@@ -10,9 +11,11 @@
 * Layout should be responsive, working both on desktop/ipad/phones.**
 
 
+
 ### Preparation
 Sign-up for free *NASA API* key https://api.nasa.gov/index.html#apply-for-an-api-key
 to use the *APOD API* - https://api.nasa.gov/api.html#apod for this project.
+
 
 
 ### Task description
