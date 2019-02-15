@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dige recruitment task</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author"content="Piotr Winiarski">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet"> 
+    </head>
+    <body>
+        <header class="mainHeader">
+            <h1>
+                <a class="logo" href="/"><img src="src/images/logo.png" alt="Dige"></a>
+            </h1>
+        </header>
+        <div class="wrapper">
+            <form method="POST" enctype="multipart/form-data" class="birth">
+                <input type="hidden" name="id" value="">
+                <div class="formfield">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" value="" id="name" required >
+                </div>
+                <div class="formfield">
+                    <label for="photo">Photo: </label>
+                    <input type="file" name="photo" value="" id="photo" required >
+                </div>
+                <div class="formfield">
+                    <label for="birthDate">Birth date: </label>
+                    <input type="date" name="birthDate" value="" id="birthDate" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+                </div>
+                <div class="formfield">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" value="" id="email"  pattern="^[a-zA-Z]+[a-zA-Z0-9]{0,24}@[a-zA-Z]+\.(com|pl|co|eu)" required>
+                </div>
+                <div class="formfield">
+                    <label for="phone">Phone: </label>
+                    <input type="tel" name="phone" value="" id="phone"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
+                </div>
+                <input type="submit" name="send" value="Submit" id="send">
+            </form>
+            <div class="calendar">
+                <div class="controls">
+                    <button class="previousMonth"><i class="fa fa-chevron-left"></i></button>
+                    <span class="monthName"></span>
+                    <button class="nextMonth"><i class="fa fa-chevron-right"></i></button>
+                </div>
+                <div class="weekDays">
+                    <div class="weekDay">Mo</div>
+                    <div class="weekDay">Tu</div>
+                    <div class="weekDay">We</div>
+                    <div class="weekDay">Th</div>
+                    <div class="weekDay">Fr</div>
+                    <div class="weekDay">Sa</div>
+                    <div class="weekDay">Su</div>
+                </div>
+                <div class="daysInMonth">
+                </div>
+            </div>
+            <div class="list">
+                <h2>List of Birthdays</h2>
+                <ul id="birthdayList">
+                </ul>
+                <button class="createForm form-open"><i class="fa fa-plus"></i></button>
+            </div>
+            <div class="modal">
+                <div class="modal-controls">
+                    <button class="close"><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

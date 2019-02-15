@@ -1,0 +1,320 @@
+body {
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body.open {
+    overflow-y: hidden;
+}
+
+h1 {
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.mainHeader {
+    background-color: #5a5a5a;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: block;
+    color: #ffffff;
+    max-width: 80px;
+}
+
+.logo img {
+    display: block;
+    max-width: 100%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.thumbnail {
+    display: block;
+    max-width: 100%;
+}
+
+/* form style */
+
+.birth {
+    margin: 10px 0;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 360px;
+    background-color: #3f3f3f;
+    color: white;
+    display: none;
+}
+
+.birth--open {
+    display: block;
+}
+
+.birth--open ~ div {
+    display: none;
+}
+
+button {
+    border: none;
+    background-color: inherit;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.formfield {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+}
+
+label {
+    margin-right: 10px;
+    min-width: 23%;
+}
+
+input {
+    padding: 5px 10px;
+    width: 100%;
+}
+
+input[type="file"] {
+    padding-left: 0;
+}
+
+input[type="submit"] {
+    border: none;
+    padding: 10px 5px;
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+/* calendar style */
+
+.calendar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-width: 360px;
+    background-color: #3f3f3f;
+    color: white;
+    padding: 10px 5px;
+    margin: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.weekDays {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+}
+
+.daysInMonth {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.birthday {
+    cursor: pointer;
+    position: relative;
+}
+
+.birthday:hover .tooltip {
+    display: flex;
+}
+
+.weekDay, .day {
+    flex-basis: 14%;
+}
+
+.day--out {
+    flex-basis: 14%;
+    pointer-events: none;
+    color: gray;
+}
+
+.week {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.previousMonth, .nextMonth {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.previousMonth:hover, .nextMonth:hover {
+    cursor: pointer;
+}
+
+/* list style */
+
+#birthdayList, .list {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.createForm {
+    font-size: 2rem;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+/* modal style */
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    box-shadow: 1px 1px 2px #000000;
+    padding: 10px;
+    z-index: 2;
+    box-sizing: border-box;
+    background-color: #3f3f3f;
+    color: white;
+    overflow-y: scroll;
+}
+
+.modal[open] {
+    display: block;
+}
+
+.modal-controls {
+    display: flex;
+    justify-content: flex-end;
+    color: #ffffff;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body img {
+    display: block;
+    max-width: 100%;
+}
+
+.modal-body p {
+    font-size: 1.5rem;
+}
+
+.close {
+    border: none;
+}
+
+.close i {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* Birthday indicator as tooltip */
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #141212;
+    left: 0;
+    top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    z-index: 1;
+}
+
+.tooltip span {
+    margin: 0 10px;
+}
+
+.tooltip img {
+    margin-top: 10px;
+    max-width: 160px;
+}
+
+@media(min-width: 640px) {
+    .responsive-img {
+        max-width: 160px;
+        margin: 0;
+    }
+}
+
+@media(max-width: 640px) {
+
+    #birthdayList li {
+        flex-wrap: wrap;
+    }
+
+    .responsive-img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width: 360px) {
+    #birthdayList li {
+        flex-direction: column;
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+
+    .calendar {
+        max-width: 360px;
+        min-width: 300px;
+    }
+}
