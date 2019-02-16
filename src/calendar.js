@@ -8,12 +8,12 @@ const calendar = {
         return months[month];
     },
     async fillCalendar(date, monthNum) {
-        const day = date.getDay();
-        const daysofMonth = date.getDate();
-        const previousMonth = day > 1 ? new Date(2019,monthNum-1,0).getDate() : null;
-        const nextMonth = daysofMonth - day % 7 !== 0 ? new Date(2019,monthNum+1,0).getDate() : null;
+        const day = date.getDay() + 1;
+        const daysofMonth = new Date(date.getFullYear(), monthNum + 1,0).getDate();
+        const daysofPreviousMonth = day !== 1 ? new Date(2019,monthNum,0).getDate() : null;
+        const nextMonth = daysofMonth - day % 7 !== 0 ? new Date(2019,monthNum + 2,0).getDate() : null;
+        let days = 0;
         let month = '';
-        let days = day;
         const { births } = getBirthdaysFromStorage('births');
         const birthDays = births.filter(b => {
             const d = b.birthDate.split('-');
@@ -26,11 +26,12 @@ const calendar = {
                 month += '</div>';
                 days = 0;
             }
-            if(i === 1 || days === 0) {
+            if( i === 1 || days === 0) {
                 month += `<div class="week">`;
-                if(previousMonth && i === 1) {
-                    const r = days - i;
-                    for(let j=previousMonth - r; j <= previousMonth; j++) {
+                if(daysofPreviousMonth && i === 1) {
+                    const r = daysofPreviousMonth - day + 2;
+                    days += daysofPreviousMonth - r + 1;
+                    for(let j = r; j <= daysofPreviousMonth; j++) {
                         month +=`<div class="day--out">${j}</div>`;
                     }
                 }
@@ -38,6 +39,7 @@ const calendar = {
             month += await this.getDayMarkup(i, birthDays);
             if(nextMonth && i === daysofMonth ) {   
                 const r = 6 - days;   
+                days += r - 1;
                 for(let j = 1; j <= r; j++) {
                     month +=`<div class="day--out">${j}</div>`;
                 }
@@ -63,7 +65,7 @@ const calendar = {
         let date = '';
         let icon = '';
         let tooltip = '';
-        const dayNum = num < 9 ? `0${num}` : `${num}`;
+        const dayNum = num < 10 ? `0${num}` : `${num}`;
         for(let i=0; i < births.length; i++) {
             const splitDate = births[i].birthDate.split('-');
             if(splitDate[2] === dayNum) {

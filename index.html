@@ -16,30 +16,6 @@
             </h1>
         </header>
         <div class="wrapper">
-            <form method="POST" enctype="multipart/form-data" class="birth">
-                <input type="hidden" name="id" value="">
-                <div class="formfield">
-                    <label for="name">Name: </label>
-                    <input type="text" name="name" value="" id="name" required >
-                </div>
-                <div class="formfield">
-                    <label for="photo">Photo: </label>
-                    <input type="file" name="photo" value="" id="photo" required >
-                </div>
-                <div class="formfield">
-                    <label for="birthDate">Birth date: </label>
-                    <input type="date" name="birthDate" value="" id="birthDate" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
-                </div>
-                <div class="formfield">
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" value="" id="email"  pattern="^[a-zA-Z]+[a-zA-Z0-9]{0,24}@[a-zA-Z]+\.(com|pl|co|eu)" required>
-                </div>
-                <div class="formfield">
-                    <label for="phone">Phone: </label>
-                    <input type="tel" name="phone" value="" id="phone"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
-                </div>
-                <input type="submit" name="send" value="Submit" id="send">
-            </form>
             <div class="calendar">
                 <div class="controls">
                     <button class="previousMonth"><i class="fa fa-chevron-left"></i></button>
@@ -62,7 +38,7 @@
                 <h2>List of Birthdays</h2>
                 <ul id="birthdayList">
                 </ul>
-                <button class="createForm form-open"><i class="fa fa-plus"></i></button>
+                <button class="createForm"><i class="fa fa-plus"></i></button>
             </div>
             <div class="modal">
                 <div class="modal-controls">

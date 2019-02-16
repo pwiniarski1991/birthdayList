@@ -2,6 +2,7 @@ body {
     font-size: 14px;
     margin: 0 auto;
     padding: 0;
+    font-family: "Open Sans","Font Awesome 5 Free";
 }
 
 body.open {
@@ -67,14 +68,9 @@ li {
     max-width: 360px;
     background-color: #3f3f3f;
     color: white;
-    display: none;
 }
 
-.birth--open {
-    display: block;
-}
-
-.birth--open ~ div {
+.birth ~ div {
     display: none;
 }
 
@@ -100,6 +96,49 @@ label {
     min-width: 23%;
 }
 
+label[for="photo"] {
+    width: 100%;
+    height: 20px;
+    display: inline-block;
+    margin: 0 0 0 92px;
+    background-color: white;
+    color: black;
+    padding: 5px 20px 5px 10px;
+    line-height: 20px;
+    cursor: pointer;
+    position: relative;
+    outline: thin dotted;
+}
+
+label[for="photo"]::before {
+    content: 'Photo:';
+    position: absolute;
+    left: -92px;
+    color: #fff;
+}
+
+label[for="photo"]::after {
+    content: "\f093";
+    position: absolute;
+    display: inline-block;
+    top: 4px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+.preview {
+    display: block;
+    max-width: 120px;
+    padding-left: 10px;
+}
+
+.preview img {
+    display: block;
+    max-width: 120px;
+}
+
 input {
     padding: 5px 10px;
     width: 100%;
@@ -107,6 +146,7 @@ input {
 
 input[type="file"] {
     padding-left: 0;
+    opacity: 0;
 }
 
 input[type="submit"] {
@@ -188,6 +228,17 @@ input[type="submit"] {
 }
 
 /* list style */
+
+.spinner {
+    width: 55px;
+    height: 50px;
+    position: relative;
+    border: 6px solid;
+    border-color: #5BC85B transparent transparent transparent;
+    border-radius: 50%;
+    transform-origin: center;
+    animation: spin 1s linear infinite;
+  }
 
 #birthdayList, .list {
     width: 100%;
@@ -318,3 +369,13 @@ input[type="submit"] {
         min-width: 300px;
     }
 }
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg)
+      
+    }
+    to {
+      transform: rotate(360deg)
+    }
+  }

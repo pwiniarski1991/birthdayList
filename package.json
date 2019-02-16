@@ -1,6 +1,6 @@
 {
   "name": "recruitment-task-junior-frontend-developer-1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "**A simple, Javascript based task checking your frontend development skills.**",
   "main": "main.js",
   "dependencies": {},
