@@ -3,6 +3,11 @@ import { getBirthdaysFromStorage, fetchApodData } from './helpers';
 const calendar = { 
     monthDays: [],
     monthDates: [],
+    async init(monthNum = 1, date) {
+        await this.fillCalendar(date, monthNum);
+        this.setMonth(monthNum);
+        this.switchCalendarView();
+    },
     getMonthName(month) {
         const months = ['January', 'February', 'March', 'April', 'Mai', 'June', 'July', 'August', 'September', 'October', 'Novemeber', 'December'];
         return months[month];
@@ -51,11 +56,14 @@ const calendar = {
         }
     },
     setMonth(month) {
-        document.querySelector('.monthName').textContent = this.getMonthName(month);
+        document.querySelectorAll('.monthName').forEach(el => el.textContent = this.getMonthName(month));
     },
-    async init(monthNum = 1, date) {
-        await this.fillCalendar(date, monthNum);
-        this.setMonth(monthNum);
+    switchCalendarView() {
+        document.querySelectorAll('.monthName').forEach(el => {
+            el.addEventListener('click', () => {
+                document.querySelector('.calendar').classList.toggle('calendar--hide');
+            });
+        });
     },
     render(month) {
         const monthView = document.querySelector('.daysInMonth');

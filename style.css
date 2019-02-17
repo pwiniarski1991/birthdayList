@@ -170,10 +170,23 @@ input[type="submit"] {
     margin: 10px;
 }
 
+.monthName {
+    text-align: center;
+    cursor: pointer;
+}
+
 .controls {
-    display: flex;
+    display: none;
     justify-content: space-around;
     padding: 20px 0;
+}
+
+.calendar--hide .controls ~ * {
+    display: none;
+}
+
+.calendar--hide .controls {
+    display: flex;
 }
 
 .weekDays {
